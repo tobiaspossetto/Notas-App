@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NotasApp</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" class='theme'href="css/black.css">
+    <link rel="stylesheet" class='theme' href="css/style.css">
+</head>
+<body>
+    
+    <nav class="nav">
+        <div class="nav-izquierda">
+
+            <div class="nav-logo">
+                <img src="assets/logoo.png" alt="" class="nav-img">
+            </div>
+            <div class="nav-nombre">
+                <p>Notas App</p>
+                
+            </div>
+        </div>
+        
+        <div class="container-btn">
+            <input type="button" class='btn-mode' id='btn-submit' value="">
+        </div>
+    </nav>
+    
+    <div class="container">
+        <div class="presentacion">
+            <h1 class="presentacion-titulo">
+                Bienvenido a NotasApp
+            </h1>
+            <p class="presentacion-parrafo">
+                Una aplicacion web para tomar notas o apuntar tareas y guardarlas en la base de datos de Google Firebase.
+            </p>
+            
+        </div>
+
+        <main class="container_form">
+            <form action="" class="form">
+                <p class="form-titulo_p">Titulo de la nota:</p>
+                
+             
+                <input type="text" name="" class="form-titulo" placeholder="Ingrese su titulo" id="">
+                <p class="form-descripcion_p">Descripción:</p>
+                <textarea name="" placeholder='Ingrese su contenido' class='form-descripcion' id="" cols="30" rows="10"></textarea>
+
+                <input type="button" value="Crear" class="form-btn">
+            </form>
+        </main>
+
+        <div class="divisor">
+            <h3 class="divisor-h3">Notas creadas:</h3>
+        </div>
+
+        <section class="notas">
+            <div class="nota">
+                <h1 class="nota-titulo">
+                    Este es el titulo de una nota
+                </h1>
+                <hr class="nota-separacion">
+                <p class="nota-texto">
+                    Este es el texto que contiene la nota, puedes escribir cualquier cosa.
+                </p>
+                <div class="container-btn">
+                    <input type="button" value="Editar" class="nota-editar">
+                    <input type="button" value="Borrar" class="nota-borrar">
+                </div>
+            </div>
+        </section>
+        
+    </div>
+    <footer class="footer">
+        <p class="footer-p">By Tobias Possetto 2021</p>
+    </footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+
+    <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+        apiKey: "AIzaSyAdCYiwcbMPcJ3DCGBsgZoACxkK4ry_vbo",
+        authDomain: "notasapp-28224.firebaseapp.com",
+        projectId: "notasapp-28224",
+        storageBucket: "notasapp-28224.appspot.com",
+        messagingSenderId: "1033408569966",
+        appId: "1:1033408569966:web:d8655b1a98ba665b8c7c7f"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    </script>
+    <script src="app.js"></script>
+    <script src="darkMode.js"></script>
+</body>
+</html>

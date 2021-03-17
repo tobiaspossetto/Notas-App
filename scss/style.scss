@@ -1,0 +1,252 @@
+
+$blanco: #e7ebec;
+$azul: rgb(30, 105, 205);
+
+*{
+    margin: 0;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans';
+    font-weight: 700;
+    color: black;
+}
+
+body{
+
+    background-image: url('../assets/fondoClaro.jpg');
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: cover;
+   
+    background-attachment: fixed;
+
+    .nav{
+        width: 100%;
+        background-color: rgb(241, 241, 241);
+        display: flex;
+        justify-content:space-between;
+        align-items: center;
+        padding: 10px 20px 10px 20px;
+        box-shadow: -1px -15px 28px 12px rgba(99,99,99,1);
+        .nav-izquierda{
+           
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+           
+            .nav-logo{
+                width: 50px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                
+                .nav-img{
+                    width: 100%;
+                }
+               
+            }
+            .nav-nombre{
+                margin-left: 20px;
+                font-size: 20px;
+            }
+        }
+
+
+        .container-btn{
+            width: 60px;
+            height: 30px;
+            background-color: $azul;
+            border-radius: 15px;
+            .btn-mode{
+                background-color: white;
+                
+                width: 30px;
+                height: 30px;
+                outline: none;
+                border-radius: 15px;
+                float: left;
+                border: 3px solid  $azul;
+            }
+        }
+    }
+    .container{
+        width: 80%;
+        margin: auto;
+
+        .presentacion{
+            background-color: rgba(30, 105, 205, 0.8);
+            margin-top: 50px;
+            color: white;
+            padding: 20px;
+            border-radius: 5px;
+            -webkit-box-shadow: 0px 2px 8px -1px rgba(0,0,0,0.75);
+            -moz-box-shadow: 0px 2px 8px -1px rgba(0,0,0,0.75);
+            box-shadow: 0px 2px 8px -1px rgba(0,0,0,0.75);
+            .presentacion-titulo{
+                text-align: center;
+                font-weight: 700;
+                margin-bottom: 10px;
+                font-size: 25px;
+                color: white;
+            }
+
+            .presentacion-parrafo{
+                text-align: center;
+                font-weight: 600;
+                color: white;
+            }
+        }
+
+        .container_form{
+            margin: 40px auto 40px auto;
+            -webkit-box-shadow: 0px 2px 8px -1px rgba(0,0,0,0.75);
+            -moz-box-shadow: 0px 2px 8px -1px rgba(0,0,0,0.75);
+            box-shadow: 0px 2px 8px -1px rgba(0,0,0,0.75);
+            
+            border-radius: 5px;
+            .form{
+                display: flex;
+                flex-direction: column;
+                
+                padding: 20px;
+                background-color: rgba(255, 255, 255, 0.24);
+                border-radius: 5px;
+                p{
+                    align-self: flex-start;
+                    margin-bottom: 20px;
+                    font-weight: 700;
+                    color: #1a1616;
+                }
+
+                .form-titulo,
+                .form-descripcion{
+                    box-shadow: 0px 1px 8px -3px rgb(37, 37, 37);
+                    background-color: rgb(247, 247, 255);
+                    border: none;
+                    padding: 5px;
+                    border-radius: 3px;
+                    color: rgb(45, 52, 58);
+                    margin-bottom: 20px;
+                    outline: none;
+                    font-weight: 500;
+                }
+
+                .form-titulo::placeholder,
+                .form-descripcion::placeholder{
+                    color: black;
+                }
+
+                .form-btn{
+                    outline: none;
+                    width: 50%;
+                    font-size: 20px;
+                    padding: 5px;
+                    text-align: center;
+                    margin: auto;
+                    border: none;
+                    border-radius: 8px;
+                    background-color: $azul;
+                    color: white;
+                    font-weight: 600;
+                }
+
+                .form-btn:hover{
+                    background-color: white;
+                    color: $azul;
+                }
+            }
+        }
+
+        .divisor{
+            
+            background-color: rgb(200, 211, 229);;
+            padding: 10px;
+            margin: auto;
+            border-radius: 5px;
+            .divisor-h3{
+                text-align: center;
+                font-weight: 600;
+                
+            }
+            margin-bottom: 40px;
+        }
+
+        .notas{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-color: rgba(255, 255, 255, 0.356);
+            box-shadow: 0px 2px 8px -1px rgba(0,0,0,0.75);
+            border-radius: 5px;
+            padding: 5px;
+            .nota{
+                padding: 20px;
+                background-color: #dc9fff;
+                border-radius: 5px;
+                .nota-titulo{
+                    font-size: 20px;
+                    font-weight: 600;
+                    text-align: center;
+                }
+
+                .nota-separacion{
+                    background-color: #8000ca;
+                    border: none;
+                    height: 2px;
+                    width: 60%;
+                    margin: auto;
+                    margin-bottom: 10px;
+                    margin-top: 10px;
+                }
+
+                .nota-texto{
+                    font-weight: 500;
+                    font-size: 15px;
+                }
+
+                .container-btn{
+                    display: flex;
+                    justify-content: space-between;
+                    align-items:center;
+                    .nota-borrar{
+                        margin-top: 20px;
+                        outline: none;
+                        padding: 5px 10px 5px 10px;
+                        border: none;
+                        border-radius: 7px;
+                        background-color: rgb(187, 43, 43);
+                        color: white;
+                    }
+
+                    .nota-editar{
+                        margin-top: 20px;
+                        outline: none;
+                        padding: 5px 10px 5px 10px;
+                        border: none;
+                        border-radius: 7px;
+                        background-color: rgb(243, 220, 91);
+                        color: rgb(0, 0, 0);
+                    }
+                }
+
+            }
+        }
+    }
+    .footer{
+        margin-top: 50px;
+        height: 50px;
+        width: 100%;
+        background-color: rgb(49, 46, 46);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .footer-p{
+            text-align: center;
+            font-weight: 500;
+            color: white;
+        }
+    }
+}
+

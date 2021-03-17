@@ -1,0 +1,190 @@
+* {
+  margin: 0;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Open Sans';
+  color: white;
+  font-weight: 700; }
+
+body {
+  background-image: url("../assets/fondoOscuro.jpg");
+  background-repeat: no-repeat;
+  background-position: left;
+  background-size: cover;
+  
+  background-attachment: fixed; }
+  body .nav {
+    width: 100%;
+    background-color: #111111;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px 10px 20px;
+    box-shadow: -1px -15px 28px 12px #636363; }
+    body .nav .nav-izquierda {
+      display: flex;
+      justify-content: space-between;
+      align-items: center; }
+      body .nav .nav-izquierda .nav-logo {
+        width: 50px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center; }
+        body .nav .nav-izquierda .nav-logo .nav-img {
+          width: 100%; }
+      body .nav .nav-izquierda .nav-nombre {
+        margin-left: 20px;
+        font-size: 20px; }
+    body .nav .container-btn {
+      width: 60px;
+      height: 30px;
+      background-color: #afd2ff;
+      border-radius: 15px; }
+      body .nav .container-btn .btn-mode {
+        background-color: black;
+        width: 30px;
+        height: 30px;
+        outline: none;
+        border-radius: 15px;
+        float: right;
+        border: 3px solid #afd2ff; }
+  body .container {
+    width: 80%;
+    margin: auto; }
+    body .container .presentacion {
+      background-color: rgba(15, 33, 116, 0.8);
+      margin-top: 50px;
+      color: white;
+      padding: 20px;
+      border-radius: 5px;
+      -webkit-box-shadow: 0px 2px 8px -1px rgba(0, 0, 0, 0.75);
+      -moz-box-shadow: 0px 2px 8px -1px rgba(0, 0, 0, 0.75);
+      box-shadow: 0px 2px 8px -1px rgba(0, 0, 0, 0.75); }
+      body .container .presentacion .presentacion-titulo {
+        text-align: center;
+        font-weight: 700;
+        margin-bottom: 10px;
+        font-size: 25px; }
+      body .container .presentacion .presentacion-parrafo {
+        text-align: center;
+        font-weight: 600; }
+    body .container .container_form {
+      margin: 40px auto 40px auto;
+      -webkit-box-shadow: 0px 2px 8px -1px rgba(0, 0, 0, 0.75);
+      -moz-box-shadow: 0px 2px 8px -1px rgba(0, 0, 0, 0.75);
+      box-shadow: 0px 2px 8px -1px rgba(0, 0, 0, 0.75);
+      border-radius: 5px; }
+      body .container .container_form .form {
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        background-color: rgba(0, 0, 0, 0.534);
+        border-radius: 5px; }
+        body .container .container_form .form p {
+          align-self: flex-start;
+          margin-bottom: 20px;
+          font-weight: 700;
+          color: white; }
+        body .container .container_form .form .form-titulo,
+        body .container .container_form .form .form-descripcion {
+          box-shadow: 0px 1px 8px -3px #252525;
+          background-color: #1c3e64;
+          border: none;
+          padding: 5px;
+          border-radius: 3px;
+          color: #fcfcfc;
+          margin-bottom: 20px;
+          outline: none;
+          font-weight: 500; 
+         }
+
+          body .container .container_form .form .form-titulo::placeholder,
+        body .container .container_form .form .form-descripcion::placeholder {
+          color: rgb(253, 253, 253);
+        }
+          
+        body .container .container_form .form .form-btn {
+          outline: none;
+          width: 50%;
+          font-size: 20px;
+          padding: 5px;
+          text-align: center;
+          margin: auto;
+          border: none;
+          border-radius: 8px;
+          background-color: rgb(15, 33, 116);
+          color: white;
+          font-weight: 600; }
+        body .container .container_form .form .form-btn:hover {
+          background-color: white;
+          color: #1e69cd; }
+    body .container .divisor {
+      background-color: #74022e;
+      padding: 10px;
+      margin: auto;
+      border-radius: 5px;
+      margin-bottom: 40px; }
+      body .container .divisor .divisor-h3 {
+        text-align: center;
+        font-weight: 600; }
+    body .container .notas {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      background-color: rgba(255, 255, 255, 0.356);
+      box-shadow: 0px 2px 8px -1px rgba(0, 0, 0, 0.75);
+      border-radius: 5px;
+      padding: 5px; }
+      body .container .notas .nota {
+        padding: 20px;
+        background-color: #052952;
+        border-radius: 5px; }
+        body .container .notas .nota .nota-titulo {
+          font-size: 20px;
+          font-weight: 600;
+          text-align: center; }
+        body .container .notas .nota .nota-separacion {
+          background-color: rgb(255, 255, 255);
+          border: none;
+          height: 2px;
+          width: 60%;
+          margin: auto;
+          margin-bottom: 10px;
+          margin-top: 10px; }
+        body .container .notas .nota .nota-texto {
+          font-weight: 500;
+          font-size: 15px; }
+        body .container .notas .nota .container-btn {
+          display: flex;
+          justify-content: space-between;
+          align-items: center; }
+          body .container .notas .nota .container-btn .nota-borrar {
+            margin-top: 20px;
+            outline: none;
+            padding: 5px 10px 5px 10px;
+            border: none;
+            border-radius: 7px;
+            background-color: #bb2b2b;
+            color: white; }
+          body .container .notas .nota .container-btn .nota-editar {
+            margin-top: 20px;
+            outline: none;
+            padding: 5px 10px 5px 10px;
+            border: none;
+            border-radius: 7px;
+            background-color: #f3dc5b;
+            color: black; }
+  body .footer {
+    margin-top: 50px;
+    height: 50px;
+    width: 100%;
+    background-color: #312e2e;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    body .footer .footer-p {
+      text-align: center;
+      font-weight: 500;
+      color: white; }
