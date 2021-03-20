@@ -10,7 +10,7 @@
 body {
   background-image: url("../assets/fondoOscuro.jpg");
   background-repeat: no-repeat;
-  background-position: left;
+  background-position:bottom;
   background-size: cover;
   
   background-attachment: fixed; }
@@ -50,7 +50,7 @@ body {
         float: right;
         border: 3px solid #afd2ff; }
   body .container {
-    width: 80%;
+    width: 90%;
     margin: auto; }
     body .container .presentacion {
       background-color: rgba(15, 33, 116, 0.8);
@@ -136,21 +136,24 @@ body {
       background-color: rgba(255, 255, 255, 0.356);
       box-shadow: 0px 2px 8px -1px rgba(0, 0, 0, 0.75);
       border-radius: 5px;
-      padding: 5px; }
+      padding-top: 20px; }
       body .container .notas .nota {
+        margin-bottom: 20px;
         padding: 20px;
         background-color: #052952;
-        border-radius: 5px; }
+        border-radius: 5px;
+        width: 90%;
+        height: auto;}
         body .container .notas .nota .nota-titulo {
           font-size: 20px;
           font-weight: 600;
-          text-align: center; }
+          text-align: justify; }
         body .container .notas .nota .nota-separacion {
           background-color: rgb(255, 255, 255);
           border: none;
           height: 2px;
-          width: 60%;
-          margin: auto;
+          width: 40%;
+          
           margin-bottom: 10px;
           margin-top: 10px; }
         body .container .notas .nota .nota-texto {

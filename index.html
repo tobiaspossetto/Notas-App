@@ -41,15 +41,15 @@
         </div>
 
         <main class="container_form">
-            <form action="" class="form">
+            <form action="" class="form" id='task-form'>
                 <p class="form-titulo_p">Titulo de la nota:</p>
                 
              
-                <input type="text" name="" class="form-titulo" placeholder="Ingrese su titulo" id="">
+                <input type="text" name="" class="form-titulo" placeholder="Ingrese su titulo"  id='task-title'>
                 <p class="form-descripcion_p">Descripción:</p>
-                <textarea name="" placeholder='Ingrese su contenido' class='form-descripcion' id="" cols="30" rows="10"></textarea>
+                <textarea  id='task-textarea'  name="" placeholder='Ingrese su contenido' class='form-descripcion' cols="30" rows="5"></textarea>
 
-                <input type="button" value="Crear" class="form-btn">
+                <input type="button" value="Crear" class="form-btn"  id='btn-task-form'>
             </form>
         </main>
 
@@ -57,20 +57,26 @@
             <h3 class="divisor-h3">Notas creadas:</h3>
         </div>
 
-        <section class="notas">
-            <div class="nota">
-                <h1 class="nota-titulo">
-                    Este es el titulo de una nota
-                </h1>
-                <hr class="nota-separacion">
-                <p class="nota-texto">
-                    Este es el texto que contiene la nota, puedes escribir cualquier cosa.
-                </p>
-                <div class="container-btn">
-                    <input type="button" value="Editar" class="nota-editar">
-                    <input type="button" value="Borrar" class="nota-borrar">
+        <section class="notas" id='notas'>
+            
+            <!--
+
+
+                <div class="nota" id='nota'>
+                    <h1 class="nota-titulo" id='nota-titulo'>
+                        Este es el titulo de una nota
+                    </h1>
+                    <hr class="nota-separacion">
+                    <p class="nota-texto" id='nota-descripcion'>
+                        saaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaEste es el texto que contiene la nota, puedes escribir cualquier cosa.
+                    </p>
+                    <div class="container-btn">
+                        <input type="button" value="Editar" class="nota-editar">
+                        <input type="button" value="Borrar" class="nota-borrar">
+                    </div>
                 </div>
-            </div>
+            -->
+            
         </section>
         
     </div>
@@ -97,7 +103,8 @@
 
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-app.js"></script>
-
+    
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-firestore.js"></script>
     <!-- TODO: Add SDKs for Firebase products that you want to use
         https://firebase.google.com/docs/web/setup#available-libraries -->
 

@@ -49,7 +49,7 @@ body {
         float: left;
         border: 3px solid #1e69cd; }
   body .container {
-    width: 80%;
+    width: 90%;
     margin: auto; }
     body .container .presentacion {
       background-color: rgba(30, 105, 205, 0.8);
@@ -133,26 +133,31 @@ body {
       background-color: rgba(255, 255, 255, 0.356);
       box-shadow: 0px 2px 8px -1px rgba(0, 0, 0, 0.75);
       border-radius: 5px;
-      padding: 5px; }
+      padding-top: 20px; }
       body .container .notas .nota {
+        margin-bottom: 20px;
         padding: 20px;
         background-color: #dc9fff;
-        border-radius: 5px; }
+        border-radius: 5px;
+        width: 90%;
+        height: auto; }
         body .container .notas .nota .nota-titulo {
           font-size: 20px;
           font-weight: 600;
-          text-align: center; }
+          text-align: justify;
+          height: auto; }
         body .container .notas .nota .nota-separacion {
           background-color: #8000ca;
           border: none;
           height: 2px;
-          width: 60%;
-          margin: auto;
+          width: 40%;
           margin-bottom: 10px;
           margin-top: 10px; }
         body .container .notas .nota .nota-texto {
           font-weight: 500;
-          font-size: 15px; }
+          font-size: 15px;
+          width: 90%;
+          height: auto; }
         body .container .notas .nota .container-btn {
           display: flex;
           justify-content: space-between;
