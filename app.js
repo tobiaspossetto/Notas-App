@@ -1,6 +1,60 @@
 
 
-$(document).ready(  function(){
+$(document).ready(function(){
+      //******Cambios de modo y loader********
+    
+    
+    //localStorage.setItem('estado',estado);
+  
+    //$('.theme').attr('href','css/loader.css');
+  
+    //tomo el valor para el blackmode
+    let blanco = localStorage.getItem('estado');
+
+  
+    //si estaba activado antes entonces lo activo
+    if (blanco == 'si') {
+        
+        $('.theme').attr('href','css/style.css');
+    
+        
+    }else{
+        //sino lo desactivo
+        $('.theme').attr('href','css/black.css');
+        
+       
+    }
+
+
+    $('#btn-submit').click(function(){
+         blanco = localStorage.getItem('estado');
+
+        if (blanco == 'si') {
+            //Si estaba activado entonces lo desactivo
+           $('.theme').attr('href','css/black.css');
+           //guardo el estado
+            localStorage.setItem('estado','no');
+        }else if(blanco == 'no'){
+            
+            $('.theme').attr('href','css/style.css');
+            
+            localStorage.setItem('estado','si');
+        }
+
+    })
+
+
+
+
+
+
+    //window.addEventListener('load', () =>{
+        
+       // modo();
+    //})
+
+
+    //------- FIRESTORE----------------------
     //Iniciamos en db el Firebase.firestore
     const db = firebase.firestore();
     let notaContainer = $('#notas');
@@ -18,19 +72,26 @@ $(document).ready(  function(){
             title,
             description
         })
+       
 
     //esta funcion trae la db
     //const getTasks = () => db.collection('tasks').get();
     
 
 
-    console.log('cargando...')
+   
     
 
     //Firebase tiene una forma de saber cuando obtiene un cambio
     //onSapshot detecta algun cambio y lo trabajo con la funcion onGetTasks
-    const onGetTasks = (callback) => db.collection('tasks').onSnapshot(callback);
-
+    function onGetTasks(callback) {
+        //loaderActivo();
+        console.log('buscando')
+       // $('.theme').attr('href','css/loader.css');
+        db.collection('tasks').onSnapshot(callback);
+    }
+    
+       
     //funcion para borrar tareas
     //recibe como parametro el id que enviamos al llamarla
     //entra a la coleccion tasks y busca entre sus documentos el que tenga ese id y lo borra
@@ -43,16 +104,20 @@ $(document).ready(  function(){
    //recibe el id y los valores a actualizar
    const updateTasks = (id, updatedTask) => 
         //busca el documento con ese id y le cambia esos valores que le pase
-
+     
         db.collection('tasks').doc(id).update(updatedTask);
-
+        
 
     //funcion para ver si hay cambios en firestore    
     //cada vez que pase algo nuevo en la db ejecuto y me traigo los datos con querySnapshot
     onGetTasks((querySnapshot) => {
+    
+        console.log('ya esta')
+        
         //limpia ('borra las notas') para evitar duplicados anteriores
         notaContainer.html('');
         //recorre en un bucle cada documento
+        
         querySnapshot.forEach(doc =>{
            
             //lo guarda en tarea, doc.data devuelve lo que tenga guardado
@@ -80,7 +145,7 @@ $(document).ready(  function(){
 
                 
             })
-
+            
             // querySelectorAll selecciona todos los elementos con cierta clase y los guarda como un arreglo
             const btnsDelete =  document.querySelectorAll('.btn-delete');
            // recorro el arreglo y para cada elemento agrego el evento click
@@ -116,9 +181,10 @@ $(document).ready(  function(){
                   
                 
             })
-        })
-
-   
+    })
+        
+    
+    
     //si se hace clicl en el btn de enviar
     $('#btn-task-form').click(async function(){
 
@@ -126,7 +192,7 @@ $(document).ready(  function(){
 
         let title = $('#task-title').val();
         let description = $('#task-textarea').val();
-
+        
         //si es false editStatus entonces es para crear
         if (!editStatus) {
             //llama y espera la ejecucion de saveTask
@@ -144,19 +210,18 @@ $(document).ready(  function(){
             $('#btn-task-form').val('Crear');
             id= '';
         }
-
-        
+       
         //reseteo los campos
 
         $('#task-title').val('');
         $('#task-textarea').val('');
 
-
+        
         
         
     })
      
    
-    
+  
 
 })
