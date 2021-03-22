@@ -1,32 +1,39 @@
 
 
 $(document).ready(function(){
-      //******Cambios de modo y loader********
+     //******Cambios de modo y loader********
+    //Para el DarkMode, compruebo si ya tenia un valor, sino le hago guardar uno
+
     
-    
-    //localStorage.setItem('estado',estado);
-  
-    //$('.theme').attr('href','css/loader.css');
-  
-    //tomo el valor para el blackmode
     let blanco = localStorage.getItem('estado');
 
-  
-    //si estaba activado antes entonces lo activo
-    if (blanco == 'si') {
-        
-        $('.theme').attr('href','css/style.css');
-    
-        
-    }else{
-        //sino lo desactivo
-        $('.theme').attr('href','css/black.css');
-        
-       
+    const modoOscuro = () => {
+
+        if(localStorage.getItem('estado') == undefined){
+            let setModoOscuro = confirm('Desea activar el modo oscuro? Este mensaje solo aparecera una vez');
+            if(setModoOscuro){
+                localStorage.setItem('estado','no');
+            }else{
+                localStorage.setItem('estado','si');
+            }
+        }
+
+        blanco = localStorage.getItem('estado');
+
+        if (blanco == 'no') {
+            //Si estaba activado entonces lo desactivo
+           $('.theme').attr('href','css/black.css');
+           //guardo el estado
+           
+        }else if(blanco == 'si'){
+            
+            $('.theme').attr('href','css/style.css');
+            
+            
+        }
     }
 
-
-    $('#btn-submit').click(function(){
+    $('#btn-submit').click(function (){
          blanco = localStorage.getItem('estado');
 
         if (blanco == 'si') {
@@ -43,15 +50,19 @@ $(document).ready(function(){
 
     })
 
-
-
-
-
-
-    //window.addEventListener('load', () =>{
+    
+    const loader = () =>{
+        $('.theme').attr('href','css/loader.css');
+    }
+    /*
+    window.addEventListener('load', () =>{
+        //si estaba activado antes entonces lo activo
         
-       // modo();
-    //})
+       //modoOscuro();
+    })
+    */
+
+
 
 
     //------- FIRESTORE----------------------
@@ -87,8 +98,9 @@ $(document).ready(function(){
     function onGetTasks(callback) {
         //loaderActivo();
         console.log('buscando')
-       // $('.theme').attr('href','css/loader.css');
+        // $('.theme').attr('href','css/loader.css');
         db.collection('tasks').onSnapshot(callback);
+        
     }
     
        
@@ -102,16 +114,16 @@ $(document).ready(function(){
    const  getTask = (id) => db.collection('tasks').doc(id).get();
     
    //recibe el id y los valores a actualizar
-   const updateTasks = (id, updatedTask) => 
+   const updateTasks = (id, updatedTask) => {
         //busca el documento con ese id y le cambia esos valores que le pase
-     
+
         db.collection('tasks').doc(id).update(updatedTask);
-        
+   }
 
     //funcion para ver si hay cambios en firestore    
     //cada vez que pase algo nuevo en la db ejecuto y me traigo los datos con querySnapshot
     onGetTasks((querySnapshot) => {
-    
+        modoOscuro()
         console.log('ya esta')
         
         //limpia ('borra las notas') para evitar duplicados anteriores
@@ -154,7 +166,9 @@ $(document).ready(function(){
                     //va  a tener el id propio desde firestore
                    // console.log(e.target.dataset.id)
                    //envia ese id como parametro de deleteTasks
+                   loader();
                    await deleteTask(e.target.dataset.id);
+                   modoOscuro();
                 })
                   
                 
@@ -165,8 +179,9 @@ $(document).ready(function(){
             btnsEdit.forEach(btn =>{
                 $(btn).click(async function(e){
                    //ejecuto getTask para llevar los datos al form y guardo lo que devuelve en doc
+                    loader();
                     const doc = await getTask(e.target.dataset.id);
-                    
+                    modoOscuro();
                     //pongo esos valores en los inputs
                     $('#task-title').val(doc.data().title);
                     $('#task-textarea').val(doc.data().description);
@@ -181,13 +196,14 @@ $(document).ready(function(){
                   
                 
             })
+            
     })
         
     
     
     //si se hace clicl en el btn de enviar
     $('#btn-task-form').click(async function(){
-
+        loader();
         //guardo los datos al hacer click
 
         let title = $('#task-title').val();
@@ -217,11 +233,9 @@ $(document).ready(function(){
         $('#task-textarea').val('');
 
         
-        
+        modoOscuro();
         
     })
      
-   
-  
-
+    loader();
 })
